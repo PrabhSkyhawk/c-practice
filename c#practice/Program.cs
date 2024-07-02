@@ -326,10 +326,48 @@ Console.ReadLine();
 */
 //LOOP
 // while loop
+/*
 int i = 3;
 while (i < 10) 
 {
     Console.WriteLine(i);
     i++;
 }
+Console.ReadLine();
+*/
+//DO WHILE
+/*
+int i = 5;
+do
+{
+    Console.WriteLine(i);
+    i++;
+}
+while (i<11);
+Console.ReadLine();
+*/
+// FOR LOOP
+/*
+for (int i = 3;i<13;i++)
+{
+    Console.WriteLine(i);
+}
+Console.ReadLine();
+*/
+/*
+for (int i = 3; i < 15;i=i+3)
+{
+  Console.WriteLine(i);
+}
+Console.ReadLine();
+*/
+for (int i = 1; i <= 2; ++i)
+{
+    Console.WriteLine("Outer: " + i);  // Executes 2 times
 
+    // Inner loop
+    for (int j = 1; j <= 3; j++)
+    {
+        Console.WriteLine(" Inner: " + j);  // Executes 6 times (2 * 3)
+    }
+}
