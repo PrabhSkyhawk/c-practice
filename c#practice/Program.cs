@@ -361,6 +361,7 @@ for (int i = 3; i < 15;i=i+3)
 }
 Console.ReadLine();
 */
+/*
 for (int i = 1; i <= 2; ++i)
 {
     Console.WriteLine("Outer: " + i);  // Executes 2 times
@@ -371,3 +372,90 @@ for (int i = 1; i <= 2; ++i)
         Console.WriteLine(" Inner: " + j);  // Executes 6 times (2 * 3)
     }
 }
+*/
+/*
+for (int i = 0; i < 10; i++)
+{
+    if (i == 8)
+    {
+        break;
+    }
+    Console.WriteLine(i);
+}
+Console.ReadLine();
+*/
+/*
+for (int i = 0; i < 12; i++)
+{
+    if (i == 7)
+    {
+        continue;
+    }
+    Console.WriteLine(i);
+}
+Console.ReadLine();
+*/
+/*
+int i = 0;
+while(i<15)
+{
+    Console.WriteLine(i);
+    i++;
+    if (i==6)
+    {
+        break;
+    }
+}
+*/
+/*
+int i = 0;
+while (i < 14)
+{
+    if (i == 6)
+    {
+        i++;
+        continue;
+    }
+    Console.WriteLine(i);
+    i++;
+}
+*/
+//array
+/*
+string[] cars = { "mustang", "bmw", "gtr", "mercedes" };
+Console.WriteLine(cars[2]);
+Console.WriteLine(cars[3]);
+Console.ReadLine(); 
+*/
+//loop through an array
+/*
+string[] cars = { "bmw", "mercedes", "mustang", "fortuner", "audi" };
+for (int i = 0; i < cars.Length; i++)
+{
+    Console.WriteLine(cars[i]);
+}
+*/
+/*
+string[] username = { "abhishek", "raghu", "anshu", "altaf", "kabir" };                 //my own example
+for (int i = 0; i < username.Length; i++)
+{
+    Console.WriteLine(username[i]);
+}
+*/
+//for each loop
+/*
+string[] teachers = { "monika", "jaswinder", "kuldeep", "vishali" };
+foreach (string i in teachers)
+{
+    Console.WriteLine(i);
+}
+Console.ReadLine();
+*/
+/*
+string[] teachers = { "monika", "jaswinder", "anu", "bhavya" };
+Array.Sort(teachers);
+foreach (string i in teachers)
+{
+    Console.WriteLine(i);
+}
+*/
