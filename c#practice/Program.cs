@@ -1,6 +1,8 @@
 ﻿using System;
 using System.Linq;
+using System.Runtime.InteropServices;
 using System.Runtime.InteropServices.ObjectiveC;
+using System.Security.Cryptography.X509Certificates;
 namespace MyApplication
 {
     // arithemetic operators
@@ -564,6 +566,7 @@ namespace MyApplication
     }
 }
     */
+    /*
     class Program
     {
         static int MyMethod(int x)
@@ -576,3 +579,202 @@ namespace MyApplication
         }
     }
 }
+    */
+    // 4 july
+    /*
+    class Program
+    {
+        static double MyMethod(double x)
+        {
+            return 2.6 + x;
+        }
+        static void Main(string[] args)
+        {
+            Console.WriteLine(MyMethod(9.5));
+        }
+    }
+}
+    */
+    /*
+    class Program
+    {
+        static double MyMethod(double x, double y)
+        {
+            return x + y;
+        }
+        static void Main(string[] args)
+        {
+            Console.WriteLine(MyMethod(2.88, 8.6));
+        }
+    }
+}
+    */
+    /*
+    class Program
+    {
+        static double MyMethod(double x, double y, double z)
+        {
+            return x + y + z;
+        }
+        static void Main(string[] args)
+        {
+            double a = MyMethod(2.3, 4.5, 6.7);
+            Console.WriteLine(a);
+        }
+    }
+}
+    */
+    /*
+    class Program
+    {
+        static void MyMethod(string student1, string student2, string student3)
+        {
+            Console.WriteLine("The topper of the class is:" + student1);
+        }
+        static void Main(string[] args)
+        {
+            MyMethod(student1: "raghav", student2: "abhi", student3: "nishant");
+        }
+    }
+}
+    */
+    /*
+    class Program
+    {
+        static void MyMethod(string visitor1, string visitor2, string visitor3)
+        {
+            Console.WriteLine("The visitor with most wealth is :" +visitor3);
+        }
+        static void Main(string[] args)
+        {
+            MyMethod(visitor1: "rajneesh", visitor2: "mandeep",visitor3:"sehaj");
+        }
+    }
+}
+    */
+    /*
+    class Program
+    {
+        static int MyMethod(int x, int y)
+        {
+            return x + y;
+        }
+        static double MyMethod(double x, double y)
+        {
+            return x + y;
+        }
+        static void Main(string[] args)
+        {
+            int mynum1 = MyMethod(1, 2);
+            double mynum2 = MyMethod(2.9, 3.1);
+            Console.WriteLine("int: " +mynum1);
+            Console.WriteLine("double:"+ mynum2);
+        }
+    }
+}
+    */
+    //c# classes creating new object 
+    /*
+    class BIKE
+    {
+        string color = "black";
+        static void Main(string[] args)
+        {
+            BIKE Myobj = new BIKE();
+            Console.WriteLine(Myobj.color);
+        }
+    }
+}
+    */
+    //multipple classes and objects 
+    /*
+    class Bike
+    {
+        string color = "black";
+        int model = 2024;
+        static void Main(string[] args)
+        {
+            Bike Mybike1 = new Bike();
+            Bike Mybike2 = new Bike();
+            Console.WriteLine(Mybike1.color);
+            Console.WriteLine(Mybike2.model);
+        }
+    }
+
+    class Car 
+    {
+       static void Main(string[] args)
+        {
+            Bike Mybike1 = new Bike();
+            Console.WriteLine(Mybike1);
+        }
+    }
+}
+*/
+    /*                    //fields left blank
+    class Car
+    {
+        string color;
+        int model;
+        static void Main(string[] args)
+        {
+            Car Myobject = new Car();
+            Myobject.color = "red";
+            Myobject.model = 2024;
+            Console.WriteLine(Myobject.color);
+            Console.WriteLine(Myobject.model);
+        }
+    }
+}
+    */
+    /* //////////////////////////////// fields used forr multiple objects
+     class Car
+     {
+         string name;
+         int model;
+         static void Main(string[] args)
+         {
+             Car Ford = new Car();
+             Ford.name = "mustang";
+             Ford.model = 2024;
+
+             Car Toyata = new Car();
+             Toyata.name = "fortuner";
+             Toyata.model = 2024;
+
+             Car landrover = new Car();
+             landrover.name = "range rover";
+             landrover.model = 2024;
+
+             Console.WriteLine(Ford.name);
+             Console.WriteLine(Toyata.name);
+             Console.WriteLine(landrover.model);
+         }
+     }
+ }
+    */
+    //inheritance 
+    /*
+    class Vehicle
+    {
+        public string brand = "ford";
+        public void honk()
+        {
+            Console.WriteLine("Side plz");
+        }
+    }
+    class Car : Vehicle
+    {
+        public string modelname = "mustang";
+    }
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            Car Mycar = new Car();
+            Mycar.honk();
+            Console.WriteLine(Mycar.brand + "" + Mycar.modelname);
+        }
+    }
+}
+    */
