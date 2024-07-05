@@ -3,6 +3,7 @@ using System.Linq;
 using System.Runtime.InteropServices;
 using System.Runtime.InteropServices.ObjectiveC;
 using System.Security.Cryptography.X509Certificates;
+using System.Xml.Serialization;
 namespace MyApplication
 {
     // arithemetic operators
@@ -484,8 +485,8 @@ namespace MyApplication
             MyMethod();
         }
     }
-}
-    
+    }
+
     */
     /*    class Program
         {
@@ -517,7 +518,7 @@ namespace MyApplication
 
         }
     }
-}
+    }
     */
     /*
     class Program
@@ -550,7 +551,7 @@ namespace MyApplication
             MyMethod("aman");
         }
     }
-}
+    }
     */
     /*
     class Program
@@ -564,7 +565,7 @@ namespace MyApplication
             Console.WriteLine(MyMethod(3));
         }
     }
-}
+    }
     */
     /*
     class Program
@@ -578,7 +579,7 @@ namespace MyApplication
             Console.WriteLine(MyMethod(5));
         }
     }
-}
+    }
     */
     // 4 july
     /*
@@ -593,7 +594,7 @@ namespace MyApplication
             Console.WriteLine(MyMethod(9.5));
         }
     }
-}
+    }
     */
     /*
     class Program
@@ -607,7 +608,7 @@ namespace MyApplication
             Console.WriteLine(MyMethod(2.88, 8.6));
         }
     }
-}
+    }
     */
     /*
     class Program
@@ -622,7 +623,7 @@ namespace MyApplication
             Console.WriteLine(a);
         }
     }
-}
+    }
     */
     /*
     class Program
@@ -636,7 +637,7 @@ namespace MyApplication
             MyMethod(student1: "raghav", student2: "abhi", student3: "nishant");
         }
     }
-}
+    }
     */
     /*
     class Program
@@ -650,7 +651,7 @@ namespace MyApplication
             MyMethod(visitor1: "rajneesh", visitor2: "mandeep",visitor3:"sehaj");
         }
     }
-}
+    }
     */
     /*
     class Program
@@ -671,7 +672,7 @@ namespace MyApplication
             Console.WriteLine("double:"+ mynum2);
         }
     }
-}
+    }
     */
     //c# classes creating new object 
     /*
@@ -684,7 +685,7 @@ namespace MyApplication
             Console.WriteLine(Myobj.color);
         }
     }
-}
+    }
     */
     //multipple classes and objects 
     /*
@@ -709,8 +710,8 @@ namespace MyApplication
             Console.WriteLine(Mybike1);
         }
     }
-}
-*/
+    }
+    */
     /*                    //fields left blank
     class Car
     {
@@ -725,7 +726,7 @@ namespace MyApplication
             Console.WriteLine(Myobject.model);
         }
     }
-}
+    }
     */
     /* //////////////////////////////// fields used forr multiple objects
      class Car
@@ -751,7 +752,7 @@ namespace MyApplication
              Console.WriteLine(landrover.model);
          }
      }
- }
+    }
     */
     //inheritance 
     /*
@@ -774,6 +775,283 @@ namespace MyApplication
             Car Mycar = new Car();
             Mycar.honk();
             Console.WriteLine(Mycar.brand + "" + Mycar.modelname);
+        }
+    }
+    }
+    */
+    //5 july   constructor
+    /*
+    class Program
+    {
+        public Program()
+        {
+            Console.WriteLine("I am learner");
+        }
+        static void Main(string[] args)
+        {
+            Program MyObject = new Program();
+        }
+    }
+    }
+    */
+    /*
+    class Car
+    {
+        string carModel;
+        int carYear;
+        double carPower;
+        public Car(string model,int year,double power)
+        {
+            carModel = model;
+            carYear = year;
+            carPower = power;
+        }
+        static void Main(string[] args)
+        {
+            Car MyCar = new Car("mustang", 2023, 7.4);
+            Console.WriteLine("model:" + MyCar.carModel);
+            Console.WriteLine("year:" + MyCar.carYear);
+            Console.WriteLine("power:" + MyCar.carPower);
+        }
+    }
+    }
+    */
+    /*
+    class Car
+    {
+        string carModel;
+        int carYear;
+        double carPower;
+        public Car(string model, int year, double power)
+        {
+            carModel = model;
+            carYear = year;
+            carPower = power;
+        }
+        public Car(string model, double power, int year)
+        {
+            carModel = model;
+            carYear = year;
+            carPower = power;
+        }
+        public Car(double power, string model, int year)
+        {
+            carModel = model;
+            carYear = year;
+            carPower = power;
+        }
+        static void Main(string[] args)
+        {
+            Car MyCar = new Car("mustang", 2023, 7.4);
+            Console.WriteLine("model:" + MyCar.carModel);
+            Console.WriteLine("year:" + MyCar.carYear);
+            Console.WriteLine("power:" + MyCar.carPower);
+        }
+    }
+    }
+    */
+    // access modifiers
+    /*
+    class Car                  //////////////PRIVATE MODIFIER
+    {
+        private string model = "mustang";
+        static void Main(string[] args)
+        {
+            Car myobj = new Car();
+            Console.WriteLine(myobj.model);
+            Console.ReadLine(); 
+        }
+    }
+    }
+    */
+    /*
+    class Car  /////////////////////////////////////////////////PUBLIC ACCESS MODIFIER
+    {
+        public string model = "Mustang";
+    }
+
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            Car myObj = new Car();
+            Console.WriteLine(myObj.model);
+        }
+    }
+    }
+    */
+    /*
+    class Attendance               //Inaccessible bcoz of private modifier
+    {
+       int attendance = 10;
+    }
+
+    class Salary
+    {
+        static void Main(string[] args)
+        {
+            Attendance myattendance = new Attendance();
+            myattendance.attendance = 7;
+        }
+    }
+    }
+    */
+    /*
+    class Car
+    {
+        int manufactured = 2024;         //Inaccessbile due to protection level 
+    }
+    class Bike
+    {
+        static void Main(string[] args)
+        {
+            Car vehciledetails = new Car();
+            vehciledetails.manufactured = 2019;
+        }
+    }
+    }
+    */
+    /*
+    class Car
+    {
+        int model = 2024;
+        public void SetBalance(int amount)                          //updating private class using SETBALANCE
+        {
+            model = amount;
+        }
+        class Bike
+        {
+            static void Main(string[] args)
+            {
+                Car cardetail = new Car();
+                cardetail.SetBalance(20000);
+            }
+        }
+    }
+    }
+    *//*
+    class School
+    {
+        int attendance = 40;
+        public void SetBalance(int record)
+        {
+            attendance = record;
+        }
+
+    }
+    class College
+    {
+        static void Main(string[] args)
+        {
+            School register = new School();
+            register.SetBalance(23)
+                ;
+        }
+    }
+    }
+
+    */
+    /*
+    class School
+    {
+        int attendance = 40;
+        public void SetBalance(int record)
+        {
+            attendance = record;
+        }
+        public void GetBalance()
+            { 
+            Console.WriteLine("No of students present is:"+attendance);
+        }
+    }
+    class College
+    {
+        static void Main(string[] args)
+        {
+            School register = new School();
+            register.SetBalance(23);
+            register.GetBalance();
+                
+        }
+    }
+}
+*/
+    // polymorphism // method overloading
+    /*
+    class Program
+    {
+        void sum(int a, int b)                // diff parameters of same method 
+        {
+            Console.WriteLine(a + b);
+        }
+        void sum(float a, float b)
+        {
+            Console.WriteLine(a + b);
+        }
+        static void Main(string[] args)
+        {
+            Program myobj = new Program();
+            myobj.sum(1, 2);
+            myobj.sum(2.7f,1.2f);
+        }
+    }
+}
+*/
+    /*
+class Program
+{
+    void sum(int a, int b)                // diff  no of parameters of same method 
+    {
+        Console.WriteLine(a + b); // 2 integer parameters
+    }
+    void sum(int  a, int b, int c)  // 3 integer parameters
+    {
+        Console.WriteLine(a + b+c);
+    }
+    static void Main(string[] args)
+    {
+        Program myobj = new Program();  
+        myobj.sum(1, 2);        //if only 2 values are entered then first method will be executed
+            myobj.sum(1, 2,3);    //now this is for ecxecution of 2 method
+        }
+}
+}
+    */
+    /*
+    class Program
+    {
+        void sum(int a, float b)                // diff sequence of parameters of same method 
+        {
+            Console.WriteLine(a + b);          //int,float
+        }
+        void sum(float a, int b)  // float,int
+        {
+            Console.WriteLine(a + b);
+        }
+        static void Main(string[] args)
+        {
+            Program myobj = new Program();
+            myobj.sum(1, 2.6f);
+            myobj.sum(2.7f, 1);
+        }
+    }
+}
+*/
+    //method overriding
+    /*
+    class Animal
+    {
+        public void eat()
+        {
+            Console.WriteLine("animal is eating");
+        }
+    }
+    class Dog : Animal
+    {
+        public static void Main(string[] args)
+        {
+            Dog tommy = new Dog();
+            tommy.eat();
         }
     }
 }
