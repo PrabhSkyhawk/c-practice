@@ -1,5 +1,7 @@
-﻿using System;
+﻿using MyApplication;
+using System;
 using System.Linq;
+using System.Linq.Expressions;
 using System.Runtime.InteropServices;
 using System.Runtime.InteropServices.ObjectiveC;
 using System.Security.Cryptography.X509Certificates;
@@ -1056,3 +1058,345 @@ class Program
     }
 }
     */
+    // 8 july 2024
+    // Abstraction 
+    /*
+    abstract class Animal               //not open because its an abstract class
+    {
+        public abstract void animalsound();
+        public void sleep()
+        {
+            Console.WriteLine("zzzz");
+            Animal myobj = new Animal();  // shows error because its an abstract class 
+        }
+    }
+}
+    */
+    // inheriting from abstract class
+    /*
+    abstract class Animal                      // abstract class
+    {
+        public abstract void animalsound(); //abstract method does not have a body
+        public void sleep()        // regular method
+        {
+            Console.WriteLine("Zzzzz");
+        }
+    }
+}
+class Pig : Animal // derived class
+{
+    public override void animalsound()
+    {
+        Console.WriteLine("The pig says: wee wee"); // body of aniaml sound is provided here
+    }
+}
+class Program
+{
+    static void Main(string[] args)
+    {
+        Pig myPig = new Pig();  // Create a Pig object
+        mypig.animalsound(); // call the abstract method 
+        mypig.sleep();   // call regular method
+    }
+}
+*/
+    // Interface
+    /*
+    interface Animal
+    {
+        void animalsound();
+    }
+    class Pig : Animal
+    {
+        public void animalsound()
+        {
+            Console.WriteLine("the pig says:we we we we");
+        }
+    }
+    class Program
+    {
+        public static void Main(string[] args)
+        {
+            Pig myanimal = new Pig();
+            myanimal.animalsound();
+        }
+    }
+}
+    */
+    // multiple interfaces
+    /*
+    interface Ifirstclass
+    {
+        void mymethod();
+    }
+    interface Isecondclass
+    {
+        void myothermethod();
+    }
+    class Democlass : Ifirstclass, Isecondclass
+    {
+        public void mymethod()
+        {
+            Console.WriteLine("first name: john");
+        }
+        
+        public void myothermethod()
+        {
+            Console.WriteLine("second name: stephen");
+        }
+    }
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            Democlass mydemo = new Democlass();
+            mydemo.mymethod();
+            mydemo.myothermethod();
+        }
+    }
+}
+    */
+    // 2nd example of multiple interface 
+    /*
+    interface Imarksheet
+    {
+        void mymarksheet();
+    }
+    interface Iscorecard
+    {
+        void myscorecard();
+    }
+    class Reportcard : Imarksheet, Iscorecard
+    {
+        public void mymarksheet()
+        {
+            Console.WriteLine("total no in marksheet:2400");
+        }
+        public void myscorecard()
+        {
+            Console.WriteLine("grade in scorecard : A");
+        }
+        class Program
+        {
+            public static void Main(string[] args)
+            {
+                Reportcard degree = new Reportcard();
+                degree.myscorecard();
+                degree.mymarksheet();
+            }
+        }
+    }
+}
+    */
+    //ENUMS
+    /*
+    enum level
+    {
+        low,
+        medium,
+        high
+    }
+    class Program
+    {
+        public static void Main(string[] args)
+        {
+            level mynum = level.low;
+            Console.WriteLine(mynum);
+        }
+    }
+}
+    */
+    ///// writing ENUM in class
+    /*
+    class Program
+    {
+        enum months
+        {
+            January,
+            february,
+            March = 8, //we can assign our on enum values
+            april,
+            may,
+        }
+        static void Main(string[] args)
+        {
+            int mynum = (int)months.may;
+            Console.WriteLine(mynum);
+        }
+    }
+}
+    */
+    //enum in switch statement 
+    /*
+    class Program
+    {
+        enum level
+        {
+            low,
+            medium,
+            high
+        }
+        static void Main(string[] args)
+        {
+            level mynum = level.medium;
+            switch (mynum)
+            {
+                case level.low:
+                    Console.WriteLine("low level");
+                    break;
+                case level.medium:
+                    Console.WriteLine("medium level");
+                    break;
+                case level.high:
+                    Console.WriteLine("high level");
+                    break;
+            }
+        }
+    }
+}
+*/
+    // another example of enum in switch statement
+    /*
+    class Program
+    {
+        enum level
+        {
+            easy,
+            medium,
+            difficult
+        }
+        static void Main(string[] args)
+        {
+            level paperlevel = level.easy;
+            switch (paperlevel)
+            {
+                case level.easy:
+                    Console.WriteLine("exam was easy");
+                    break;
+                case level.medium:
+                    Console.WriteLine("exam was moderate");
+                    break;
+                case level.difficult:
+                    Console.WriteLine("exam was difficult");
+                    break;
+            }
+        }
+    }
+    }
+*/
+    //C# FILES 
+    /*
+    using System.IO;
+    namespace myapllication
+    {
+        class Program
+        {
+            static void Main(string[] args)
+            {
+                string writeText = "Hello world";
+                File.WriteAllText("filename.txt",writeText);
+                string readtext = File.ReadAllText("filename.txt");
+                Console.WriteLine(readtext);
+            }
+        }
+    }
+}
+    */
+    // Exceptions in c#
+    /*
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            try
+            {
+                int[] mynumbers = { 1, 2, 3, 4, 5, 6, 7, 8 };
+                Console.WriteLine(mynumbers[15]);
+            }
+            catch (Exception e)
+            {
+                Console.WriteLine(e.Message);
+            }
+        }
+    }
+}
+    */
+    /*
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            try
+            {
+                int[] myvalues = { 1, 2, 3, 4, 5, 6, 7, 8 };
+                Console.WriteLine(myvalues[20]);
+            }
+            catch (Exception e)
+            {
+                Console.WriteLine("something went wrong");  //we can also output our own error message
+            }
+        }
+    }
+            }
+*/
+    /*
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            try
+            {
+                string[] myvalues = {"alia","bob","charlie"};                //using the string
+                Console.WriteLine(myvalues[10]);
+            }
+            catch (Exception e)
+            {
+                Console.WriteLine("something went wrong");
+            }
+        }
+    }
+}
+    */
+    // finally
+    /*
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            try
+            {
+                int[] myvalues = { 1, 2, 3, 4 };
+                Console.WriteLine(myvalues[10]);
+            }
+            catch (Exception e)
+            {
+                Console.WriteLine(e.Message);
+            }
+            finally
+            {
+                Console.WriteLine("the try catch is finished");   /// finally used to get the result regardless of result
+            }
+        }
+    }
+}
+    */
+    //THROW KEYWORD
+    class Program
+    {
+        static void checkage(int age)
+        {
+            if (age < 18)
+            {
+                throw new ArithmeticException("Access denied- you are not atleast 18 year old");
+            }
+            else
+            {
+                Console.WriteLine("Access granted - you are old enough!");
+            }
+        }
+        static void Main(string[] args)
+        {
+            checkage(5);
+        }
+    }
+}
